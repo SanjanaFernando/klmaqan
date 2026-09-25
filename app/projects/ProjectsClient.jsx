@@ -99,7 +99,7 @@ export default function ProjectsClient({
   }, [initialProjects, filters]);
 
   return (
-    <div className="w-full bg-[#faf9f6] min-h-screen">
+    <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
       
       {/* 1. HERO BANNER (Matching page-projects.php) */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">
@@ -188,7 +188,7 @@ export default function ProjectsClient({
               No Properties Found
             </h3>
             <p className="mt-2 text-xs text-stone-500 max-w-md mx-auto">
-              We couldn't find any developments matching your selected filters. Try resetting the builder, location, or price filters to browse more listings.
+              We couldn&apos;t find any developments matching your selected filters. Try resetting the builder, location, or price filters to browse more listings.
             </p>
             <button
               onClick={() => setFilters({ developer: "", location: "", type: "", status: "", priceRange: "", beds: "", search: "" })}

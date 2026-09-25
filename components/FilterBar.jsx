@@ -50,7 +50,7 @@ export default function FilterBar({
   const hasActiveFilters = Object.values(filters).some((v) => v !== "");
 
   return (
-    <div className="w-full bg-white border-y border-neutral-200/80 shadow-sm py-6">
+    <div className="w-full border-y border-[#d4af37]/25 bg-[#1a1a1a] py-6 shadow-xl">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
         {/* Top Quick Filters Tabs */}
@@ -96,12 +96,12 @@ export default function FilterBar({
             </button>
           </div>
 
-          <div className="flex items-center gap-3 text-xs text-neutral-500">
-            <span>Showing <strong className="text-neutral-900 font-bold">{totalResults}</strong> luxury developments</span>
+          <div className="flex items-center gap-3 text-xs text-stone-400">
+            <span>Showing <strong className="font-bold text-[#d4af37]">{totalResults}</strong> luxury developments</span>
             {hasActiveFilters && (
               <button
                 onClick={clearAllFilters}
-                className="flex items-center gap-1 text-xs text-red-600 hover:text-red-700 font-medium underline"
+                className="flex items-center gap-1 text-xs font-medium text-[#f0dfa8] underline"
               >
                 <RotateCcw className="h-3 w-3" />
                 <span>Reset All</span>

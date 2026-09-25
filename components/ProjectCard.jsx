@@ -29,7 +29,7 @@ export default function ProjectCard({ project, priority = false }) {
   const type = project.project_taxonomies?.['property-type']?.[0]?.name || "Luxury Residence";
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-md border border-neutral-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-neutral-900/10 hover:border-[#c5a880]/50">
+    <div className="group relative flex flex-col overflow-hidden rounded-none border border-neutral-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:border-[#d4af37]/60 hover:shadow-2xl hover:shadow-[#9f8052]/15">
       
       {/* Property Thumbnail Image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, priority = false }) {
       </div>
 
       {/* Card Details */}
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col border-t-2 border-[#d4af37]/35 p-5">
         
         {/* Location & Title */}
         <div className="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
@@ -118,7 +118,7 @@ export default function ProjectCard({ project, priority = false }) {
         <div className="mt-5 pt-2">
           <Link
             href={`/projects/${slug}`}
-            className="flex w-full items-center justify-center gap-2 rounded-sm bg-neutral-900 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#c5a880] group-hover:to-[#9f8052] group-hover:text-neutral-950"
+            className="flex w-full items-center justify-center gap-2 rounded-none bg-neutral-900 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 group-hover:bg-[#d4af37] group-hover:text-neutral-950"
           >
             <span>View Full Details</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

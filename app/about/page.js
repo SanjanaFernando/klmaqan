@@ -18,7 +18,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="w-full bg-[#faf9f6] min-h-screen">
+    <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
       
       {/* 1. HERO BANNER */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">

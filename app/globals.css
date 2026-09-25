@@ -1,90 +1,232 @@
 @import "tailwindcss";
 
+/* ─── CSS Custom Properties ─────────────────────────────── */
 @layer base {
   :root {
-    --brand-gold: #c5a880;
-    --brand-gold-light: #e6d5b8;
-    --brand-gold-dark: #9f8052;
-    --brand-dark: #121212;
-    --brand-dark-surface: #1a1a1a;
-    --brand-stone: #242424;
-    --brand-accent: #d4af37;
+    --gold-100: #f9f0dc;
+    --gold-200: #f0dfa8;
+    --gold-300: #e6cc7a;
+    --gold-400: #dfc498;
+    --gold-500: #c5a880;
+    --gold-600: #9f8052;
+    --gold-700: #7a5e35;
+    --gold-accent: #d4af37;
+    --brand-dark: #0b0b0b;
+    --brand-dark-2: #111111;
+    --brand-dark-3: #1a1a1a;
+    --brand-dark-4: #242424;
+    --cream: #faf8f3;
+    --cream-2: #f5f0e8;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: #faf9f6;
+    background-color: var(--cream);
     color: #171717;
-    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    letter-spacing: 0;
   }
 
-  h1, h2, h3, h4, .font-serif-luxury {
+  h1, h2, h3, h4, h5, .font-serif-luxury {
     font-family: var(--font-heading), Georgia, serif;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
   }
 }
 
-/* Glassmorphism & Luxury Glow */
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #3a3020; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-500); }
+
+/* ─── Selection ─────────────────────────────────────────── */
+::selection { background: var(--gold-500); color: #0a0a0a; }
+
+/* ─── Glassmorphism Variants ────────────────────────────── */
 .glass-nav {
-  background: rgba(18, 18, 18, 0.85);
+  background: rgba(8, 7, 5, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.12);
+}
+
+.glass-dark {
+  background: rgba(18, 15, 10, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(197, 168, 128, 0.15);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 252, 245, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(197, 168, 128, 0.18);
 }
 
-.glass-card-dark {
-  background: rgba(26, 26, 26, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.luxury-page {
+  background-image: radial-gradient(circle at 12% 8%, rgba(212, 175, 55, 0.08), transparent 24rem), linear-gradient(180deg, #faf9f6 0%, #f5f0e8 100%);
 }
 
+.luxury-page section:first-child {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.luxury-page section:first-child h1 {
+  letter-spacing: -0.02em;
+}
+
+.luxury-page section .bg-white {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(170, 124, 17, 0.18);
+  box-shadow: 0 18px 50px rgba(11, 11, 11, 0.06);
+}
+
+.luxury-page section .bg-white:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+}
+
+/* ─── Gold Gradients ────────────────────────────────────── */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #dfc498 0%, #c5a880 50%, #9f8052 100%);
+  background: linear-gradient(135deg, #f0dfa8 0%, #dfc498 30%, #c5a880 65%, #9f8052 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient-text-vivid {
+  background: linear-gradient(90deg, #f9f0dc 0%, #d4af37 40%, #c5a880 70%, #9f8052 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, #dfc498 0%, #c5a880 50%, #9f8052 100%);
+  background: linear-gradient(135deg, #f0dfa8 0%, #dfc498 30%, #c5a880 65%, #9f8052 100%);
+}
+
+.gold-gradient-bg-r {
+  background: linear-gradient(135deg, #9f8052 0%, #c5a880 40%, #dfc498 80%, #f0dfa8 100%);
+}
+
+/* ─── Shimmer Animation ─────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    105deg,
+    #9f8052 0%,
+    #c5a880 20%,
+    #f0dfa8 35%,
+    #d4af37 50%,
+    #f0dfa8 65%,
+    #c5a880 80%,
+    #9f8052 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Glow Effects ──────────────────────────────────────── */
+.gold-glow {
+  box-shadow:
+    0 0 30px rgba(197, 168, 128, 0.25),
+    0 0 80px rgba(197, 168, 128, 0.08),
+    inset 0 1px 0 rgba(255, 240, 200, 0.15);
+}
+
+.gold-glow-sm {
+  box-shadow:
+    0 0 12px rgba(197, 168, 128, 0.2),
+    0 4px 24px rgba(0,0,0,0.3);
 }
 
 .gold-border-glow:hover {
-  box-shadow: 0 0 25px rgba(197, 168, 128, 0.35);
-  border-color: #c5a880;
+  box-shadow: 0 0 30px rgba(197, 168, 128, 0.3), 0 8px 40px rgba(0,0,0,0.4);
+  border-color: var(--gold-500);
 }
 
-/* Smooth custom scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #171717;
-}
-::-webkit-scrollbar-thumb {
-  background: #383838;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #c5a880;
+/* ─── Noise Texture Overlay ─────────────────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Micro-animations */
+/* ─── Luxury Divider ────────────────────────────────────── */
+.luxury-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-500) 50%, transparent 100%);
+}
+
+/* ─── Custom Badge ──────────────────────────────────────── */
+.gold-badge {
+  background: linear-gradient(135deg, rgba(159,128,82,0.15) 0%, rgba(197,168,128,0.1) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ─── Focus Styles ──────────────────────────────────────── */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--gold-500) !important;
+  box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.15);
+}
+
+/* ─── Keyframe Animations ───────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(197, 168, 128, 0); }
 }
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-scale-in { animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-float { animation: floatY 4s ease-in-out infinite; }
+.animate-pulse-gold { animation: pulseGold 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }

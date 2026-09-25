@@ -3,9 +3,9 @@ import { Building2, Mail, Phone, MapPin, ArrowRight, Globe } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950 text-white border-t border-neutral-800">
+    <footer className="bg-[#0b0b0b] text-white border-t border-[#d4af37]/30">
       {/* Top Banner / CTA */}
-      <div className="border-b border-neutral-800/80 bg-gradient-to-r from-neutral-950 via-stone-900 to-neutral-950 py-16">
+      <div className="border-b border-[#d4af37]/20 bg-[radial-gradient(circle_at_80%_50%,rgba(212,175,55,.12),transparent_30%),linear-gradient(90deg,#0b0b0b,#1a1a1a,#0b0b0b)] py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl text-center md:text-left">
             <span className="text-xs uppercase tracking-[0.3em] text-[#c5a880] font-semibold">

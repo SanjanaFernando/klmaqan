@@ -84,7 +84,7 @@ export default function SinglePackageClient({ packageItem }) {
   };
 
   return (
-    <div className="w-full bg-[#faf9f6] min-h-screen pt-24 pb-20">
+    <div className="luxury-page w-full bg-[#faf9f6] min-h-screen pt-24 pb-20">
       
       {/* 1. BREADCRUMBS */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-neutral-200">
