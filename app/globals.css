@@ -95,7 +95,13 @@
 
 .luxury-page {
   background-color: var(--brand-dark);
-  background-image: radial-gradient(circle at 12% 8%, rgba(212, 175, 55, 0.1), transparent 24rem), linear-gradient(180deg, #0b0b0b 0%, #111111 100%);
+  background-image:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(212, 175, 55, 0.1),
+      transparent 24rem
+    ),
+    linear-gradient(180deg, #0b0b0b 0%, #111111 100%);
   color: #f5f5f7;
 }
 

@@ -13,7 +13,7 @@ import {
   Compass,
   Briefcase,
   HelpCircle,
-  Mail
+  Mail,
 } from "lucide-react";
 import ConsultationModal from "./ConsultationModal";
 
@@ -49,20 +49,17 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
             ? "glass-nav py-3.5 shadow-2xl shadow-black/20"
             : isHome
               ? "bg-transparent py-5"
               : "bg-neutral-950 py-4 border-b border-neutral-800"
-          }`}
+        }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-
           {/* Brand Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-[#dfc498] via-[#c5a880] to-[#9f8052] text-neutral-950 shadow-md group-hover:scale-105 transition-transform duration-300">
-              <Building2 className="h-5 w-5 stroke-[2.2]" />
-            </div>
             <div className="flex flex-col">
               <span className="font-serif-luxury text-xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-[#dfc498] transition-colors">
                 KL MAQAN
@@ -81,10 +78,11 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${active
+                  className={`text-xs uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
+                    active
                       ? "text-[#dfc498] font-semibold"
                       : "text-stone-300 hover:text-white"
-                    }`}
+                  }`}
                 >
                   {link.name}
                   {active && (
@@ -97,8 +95,6 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-5">
-
-
             <button
               onClick={() => setModalOpen(true)}
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-sm bg-gradient-to-r from-[#c5a880] to-[#9f8052] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-950 shadow-lg transition-all duration-300 hover:shadow-[#c5a880]/30 hover:scale-[1.02]"
@@ -115,9 +111,12 @@ export default function Navbar() {
             className="flex md:hidden h-10 w-10 items-center justify-center rounded-sm border border-stone-700 bg-neutral-900 text-stone-300 hover:text-white"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
-
         </div>
 
         {/* Mobile menu dropdown */}
@@ -131,10 +130,11 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-sm uppercase tracking-wider py-2 px-3 rounded-sm ${active
+                    className={`text-sm uppercase tracking-wider py-2 px-3 rounded-sm ${
+                      active
                         ? "bg-stone-800 text-[#dfc498] font-semibold"
                         : "text-stone-300 hover:bg-stone-900"
-                      }`}
+                    }`}
                   >
                     {link.name}
                   </Link>
@@ -166,7 +166,10 @@ export default function Navbar() {
       </header>
 
       {/* Consultation Modal */}
-      <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ConsultationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </>
   );
 }
