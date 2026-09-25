@@ -238,17 +238,17 @@ export default function HomeClient({ projects, services, testimonials }) {
               <Link
                 key={district.name}
                 href={`/projects?location=${district.name.toLowerCase().replaceAll(" ", "-")}`}
-                className={`group relative overflow-hidden ${index === 1 ? "md:mt-16" : ""}`}
+                className={`group relative ${index === 1 ? "md:mt-16" : ""}`}
               >
-                <div className="relative aspect-[.72]">
+                <div className="relative isolate aspect-[.72] overflow-hidden">
                   <Image
                     src={district.image}
                     alt={district.name}
                     fill
-                    className="object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                    className="z-0 object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6">
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0b0b0b] via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 z-20">
                     <p className="mb-2 text-[10px] uppercase tracking-[.25em] text-[#d4af37]">
                       0{index + 1} / {district.type}
                     </p>

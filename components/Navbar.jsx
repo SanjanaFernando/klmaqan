@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Building2,
   Menu,
   X,
   Phone,
@@ -60,6 +60,14 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
           {/* Brand Logo */}
           <Link href="/" className="group flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="KL MAQAN"
+              width={44}
+              height={44}
+              priority
+              className="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
             <div className="flex flex-col">
               <span className="font-serif-luxury text-xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-[#dfc498] transition-colors">
                 KL MAQAN
