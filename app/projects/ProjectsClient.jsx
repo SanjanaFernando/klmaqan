@@ -2,7 +2,14 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
-import { LayoutGrid, List, SlidersHorizontal, Sparkles, Building2, MapPin } from "lucide-react";
+import {
+  LayoutGrid,
+  List,
+  SlidersHorizontal,
+  Sparkles,
+  Building2,
+  MapPin,
+} from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import FilterBar from "@/components/FilterBar";
 
@@ -13,7 +20,7 @@ export default function ProjectsClient({
   types = [],
   statuses = [],
   priceRanges = [],
-  bedsList = []
+  bedsList = [],
 }) {
   const [viewMode, setViewMode] = useState("grid"); // grid | list
   const [filters, setFilters] = useState({
@@ -41,9 +48,17 @@ export default function ProjectsClient({
 
       // 2. Developer
       if (filters.developer) {
-        const devList = project.project_taxonomies?.['property-developer'] || [];
-        const hasDev = devList.some((d) => d.slug === filters.developer || d.name?.toLowerCase().includes(filters.developer.toLowerCase()));
-        if (!hasDev && !project.class_list?.some(c => c.includes(filters.developer))) {
+        const devList =
+          project.project_taxonomies?.["property-developer"] || [];
+        const hasDev = devList.some(
+          (d) =>
+            d.slug === filters.developer ||
+            d.name?.toLowerCase().includes(filters.developer.toLowerCase()),
+        );
+        if (
+          !hasDev &&
+          !project.class_list?.some((c) => c.includes(filters.developer))
+        ) {
           return false;
         }
       }
@@ -51,26 +66,48 @@ export default function ProjectsClient({
       // 3. Location
       if (filters.location) {
         const locList = project.project_taxonomies?.location || [];
-        const hasLoc = locList.some((l) => l.slug === filters.location || l.name?.toLowerCase().includes(filters.location.toLowerCase()));
-        if (!hasLoc && !project.class_list?.some(c => c.includes(filters.location))) {
+        const hasLoc = locList.some(
+          (l) =>
+            l.slug === filters.location ||
+            l.name?.toLowerCase().includes(filters.location.toLowerCase()),
+        );
+        if (
+          !hasLoc &&
+          !project.class_list?.some((c) => c.includes(filters.location))
+        ) {
           return false;
         }
       }
 
       // 4. Property Type
       if (filters.type) {
-        const typeList = project.project_taxonomies?.['property-type'] || [];
-        const hasType = typeList.some((t) => t.slug === filters.type || t.name?.toLowerCase().includes(filters.type.toLowerCase()));
-        if (!hasType && !project.class_list?.some(c => c.includes(filters.type))) {
+        const typeList = project.project_taxonomies?.["property-type"] || [];
+        const hasType = typeList.some(
+          (t) =>
+            t.slug === filters.type ||
+            t.name?.toLowerCase().includes(filters.type.toLowerCase()),
+        );
+        if (
+          !hasType &&
+          !project.class_list?.some((c) => c.includes(filters.type))
+        ) {
           return false;
         }
       }
 
       // 5. Property Status
       if (filters.status) {
-        const statusList = project.project_taxonomies?.['property-status'] || [];
-        const hasStatus = statusList.some((s) => s.slug === filters.status || s.name?.toLowerCase().includes(filters.status.toLowerCase()));
-        if (!hasStatus && !project.class_list?.some(c => c.includes(filters.status))) {
+        const statusList =
+          project.project_taxonomies?.["property-status"] || [];
+        const hasStatus = statusList.some(
+          (s) =>
+            s.slug === filters.status ||
+            s.name?.toLowerCase().includes(filters.status.toLowerCase()),
+        );
+        if (
+          !hasStatus &&
+          !project.class_list?.some((c) => c.includes(filters.status))
+        ) {
           return false;
         }
       }
@@ -79,7 +116,9 @@ export default function ProjectsClient({
       if (filters.beds) {
         const bedsVal = project.acf?.bedrooms || "";
         const bedsTax = project.project_taxonomies?.beds || [];
-        const matchesTax = bedsTax.some(b => b.slug === filters.beds || b.name === filters.beds);
+        const matchesTax = bedsTax.some(
+          (b) => b.slug === filters.beds || b.name === filters.beds,
+        );
         if (!matchesTax && !bedsVal.includes(filters.beds)) {
           return false;
         }
@@ -87,9 +126,12 @@ export default function ProjectsClient({
 
       // 7. Price Range
       if (filters.priceRange) {
-        const prTax = project.project_taxonomies?.['price-range'] || [];
-        const matchesPr = prTax.some(p => p.slug === filters.priceRange);
-        if (!matchesPr && !project.class_list?.some(c => c.includes(filters.priceRange))) {
+        const prTax = project.project_taxonomies?.["price-range"] || [];
+        const matchesPr = prTax.some((p) => p.slug === filters.priceRange);
+        if (
+          !matchesPr &&
+          !project.class_list?.some((c) => c.includes(filters.priceRange))
+        ) {
           return false;
         }
       }
@@ -100,7 +142,6 @@ export default function ProjectsClient({
 
   return (
     <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
-      
       {/* 1. HERO BANNER (Matching page-projects.php) */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">
         <Image
@@ -121,7 +162,9 @@ export default function ProjectsClient({
             <span className="gold-gradient-text">Property Projects</span>
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-300 font-light">
-            Discover a curated selection of off-plan and ready developments across Dubai. Explore available options and find opportunities that align with your budget and long-term investment goals.
+            Discover a curated selection of off-plan and ready developments
+            across Dubai. Explore available options and find opportunities that
+            align with your budget and long-term investment goals.
           </p>
         </div>
       </section>
@@ -141,7 +184,6 @@ export default function ProjectsClient({
 
       {/* 3. LISTING GRID */}
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
-        
         {/* Results Header */}
         <div className="flex items-center justify-between pb-6 border-b border-neutral-200">
           <div>
@@ -159,7 +201,9 @@ export default function ProjectsClient({
               type="button"
               onClick={() => setViewMode("grid")}
               className={`p-1.5 rounded-sm transition-colors ${
-                viewMode === "grid" ? "bg-neutral-900 text-white" : "text-stone-400 hover:text-neutral-900"
+                viewMode === "grid"
+                  ? "bg-neutral-900 text-white"
+                  : "text-stone-400 hover:text-neutral-900"
               }`}
               aria-label="Grid view"
             >
@@ -169,7 +213,9 @@ export default function ProjectsClient({
               type="button"
               onClick={() => setViewMode("list")}
               className={`p-1.5 rounded-sm transition-colors ${
-                viewMode === "list" ? "bg-neutral-900 text-white" : "text-stone-400 hover:text-neutral-900"
+                viewMode === "list"
+                  ? "bg-neutral-900 text-white"
+                  : "text-stone-400 hover:text-neutral-900"
               }`}
               aria-label="List view"
             >
@@ -188,29 +234,45 @@ export default function ProjectsClient({
               No Properties Found
             </h3>
             <p className="mt-2 text-xs text-stone-500 max-w-md mx-auto">
-              We couldn&apos;t find any developments matching your selected filters. Try resetting the builder, location, or price filters to browse more listings.
+              We couldn&apos;t find any developments matching your selected
+              filters. Try resetting the builder, location, or price filters to
+              browse more listings.
             </p>
             <button
-              onClick={() => setFilters({ developer: "", location: "", type: "", status: "", priceRange: "", beds: "", search: "" })}
+              onClick={() =>
+                setFilters({
+                  developer: "",
+                  location: "",
+                  type: "",
+                  status: "",
+                  priceRange: "",
+                  beds: "",
+                  search: "",
+                })
+              }
               className="mt-6 inline-flex items-center gap-2 rounded-sm bg-[#c5a880] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-neutral-950"
             >
               Reset All Filters
             </button>
           </div>
         ) : (
-          <div className={`mt-8 ${
-            viewMode === "grid" 
-              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
-              : "grid grid-cols-1 gap-6"
-          }`}>
+          <div
+            className={`mt-8 ${
+              viewMode === "grid"
+                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                : "grid grid-cols-1 gap-6"
+            }`}
+          >
             {filteredProjects.map((project, idx) => (
-              <ProjectCard key={project.id} project={project} priority={idx < 3} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                priority={idx < 3}
+              />
             ))}
           </div>
         )}
-
       </section>
-
     </div>
   );
 }

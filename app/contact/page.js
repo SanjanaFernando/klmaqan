@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  Building2, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Send, 
-  Sparkles, 
-  CheckCircle2, 
-  MessageSquare 
+import {
+  Building2,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  Sparkles,
+  CheckCircle2,
+  MessageSquare,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
     phone: "",
     propertyType: "Penthouse / Villa",
     budget: "AED 3M - 5M",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,6 @@ export default function ContactPage() {
 
   return (
     <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
-      
       {/* 1. HERO BANNER */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">
         <Image
@@ -57,7 +56,9 @@ export default function ContactPage() {
             <span className="gold-gradient-text">Dubai Property Directors</span>
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-300 font-light">
-            Whether you are acquiring a signature primary residence, seeking off-plan developer allocations, or exploring UAE Golden Visa eligibility, our advisors are at your service.
+            Whether you are acquiring a signature primary residence, seeking
+            off-plan developer allocations, or exploring UAE Golden Visa
+            eligibility, our advisors are at your service.
           </p>
         </div>
       </section>
@@ -65,7 +66,6 @@ export default function ContactPage() {
       {/* 2. MAIN CONTACT SECTION */}
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
           {/* Contact Details & Office Coordinates */}
           <div className="lg:col-span-5 space-y-8">
             <div>
@@ -76,7 +76,9 @@ export default function ContactPage() {
                 KL MAQAN Advisory Office
               </h2>
               <p className="mt-3 text-sm text-stone-600 leading-relaxed font-light">
-                Conveniently located in Downtown Dubai overlooking Burj Khalifa and Dubai Mall. Private client appointments available 7 days a week.
+                Conveniently located in Downtown Dubai overlooking Burj Khalifa
+                and Dubai Mall. Private client appointments available 7 days a
+                week.
               </p>
             </div>
 
@@ -86,8 +88,12 @@ export default function ContactPage() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">Physical Address</h3>
-                  <p className="text-xs text-stone-600 mt-1">Downtown Boulevard, Downtown Dubai, United Arab Emirates</p>
+                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">
+                    Physical Address
+                  </h3>
+                  <p className="text-xs text-stone-600 mt-1">
+                    Downtown Boulevard, Downtown Dubai, United Arab Emirates
+                  </p>
                 </div>
               </div>
 
@@ -96,8 +102,12 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">Direct Phone & WhatsApp</h3>
-                  <p className="text-xs text-stone-600 mt-1">+971 4 000 0000 / +971 50 000 0000</p>
+                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">
+                    Direct Phone & WhatsApp
+                  </h3>
+                  <p className="text-xs text-stone-600 mt-1">
+                    +971 4 000 0000 / +971 50 000 0000
+                  </p>
                 </div>
               </div>
 
@@ -106,8 +116,12 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">Confidential Email</h3>
-                  <p className="text-xs text-stone-600 mt-1">concierge@klmaqan.com / vip@klmaqan.com</p>
+                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">
+                    Confidential Email
+                  </h3>
+                  <p className="text-xs text-stone-600 mt-1">
+                    concierge@klmaqan.com / vip@klmaqan.com
+                  </p>
                 </div>
               </div>
 
@@ -116,8 +130,12 @@ export default function ContactPage() {
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">Advisory Hours</h3>
-                  <p className="text-xs text-stone-600 mt-1">Monday – Sunday: 9:00 AM – 8:00 PM GST</p>
+                  <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-sm">
+                    Advisory Hours
+                  </h3>
+                  <p className="text-xs text-stone-600 mt-1">
+                    Monday – Sunday: 9:00 AM – 8:00 PM GST
+                  </p>
                 </div>
               </div>
             </div>
@@ -135,7 +153,9 @@ export default function ContactPage() {
                     Message Successfully Sent
                   </h3>
                   <p className="text-xs text-stone-600 max-w-md mx-auto">
-                    Thank you for contacting KL MAQAN. One of our senior property directors will review your inquiry and reach out within 15 minutes.
+                    Thank you for contacting KL MAQAN. One of our senior
+                    property directors will review your inquiry and reach out
+                    within 15 minutes.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -163,7 +183,9 @@ export default function ContactPage() {
                         type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         placeholder="Johnathan Sterling"
                         className="w-full rounded-sm border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none"
                       />
@@ -176,7 +198,9 @@ export default function ContactPage() {
                         type="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
                         placeholder="+971 50 000 0000"
                         className="w-full rounded-sm border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none"
                       />
@@ -191,7 +215,9 @@ export default function ContactPage() {
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       placeholder="client@investments.com"
                       className="w-full rounded-sm border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none"
                     />
@@ -204,13 +230,26 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={formData.propertyType}
-                        onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            propertyType: e.target.value,
+                          })
+                        }
                         className="w-full rounded-sm border border-neutral-300 bg-white px-3 py-2.5 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none cursor-pointer"
                       >
-                        <option value="Penthouse / Villa">Penthouse / Villa</option>
-                        <option value="Off-Plan Investment">Off-Plan Investment</option>
-                        <option value="Beachfront Waterfront">Beachfront Waterfront</option>
-                        <option value="Commercial / Full Building">Commercial / Full Building</option>
+                        <option value="Penthouse / Villa">
+                          Penthouse / Villa
+                        </option>
+                        <option value="Off-Plan Investment">
+                          Off-Plan Investment
+                        </option>
+                        <option value="Beachfront Waterfront">
+                          Beachfront Waterfront
+                        </option>
+                        <option value="Commercial / Full Building">
+                          Commercial / Full Building
+                        </option>
                       </select>
                     </div>
 
@@ -220,7 +259,9 @@ export default function ContactPage() {
                       </label>
                       <select
                         value={formData.budget}
-                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, budget: e.target.value })
+                        }
                         className="w-full rounded-sm border border-neutral-300 bg-white px-3 py-2.5 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none cursor-pointer"
                       >
                         <option value="AED 1.5M - 3M">AED 1.5M - 3M</option>
@@ -238,7 +279,9 @@ export default function ContactPage() {
                     <textarea
                       rows="4"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       placeholder="Please mention preferred locations, payment plan preferences, or Golden Visa questions..."
                       className="w-full rounded-sm border border-neutral-300 bg-white p-3 text-xs text-neutral-900 focus:border-[#c5a880] focus:outline-none"
                     />
@@ -250,16 +293,18 @@ export default function ContactPage() {
                     className="w-full flex items-center justify-center gap-2 rounded-sm bg-neutral-900 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#c5a880] hover:text-neutral-950"
                   >
                     <Send className="h-4 w-4" />
-                    <span>{loading ? "Sending Inquiry..." : "Submit Confidential Inquiry"}</span>
+                    <span>
+                      {loading
+                        ? "Sending Inquiry..."
+                        : "Submit Confidential Inquiry"}
+                    </span>
                   </button>
                 </form>
               )}
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }

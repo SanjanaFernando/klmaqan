@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Building, 
-  MapPin, 
-  Home, 
-  Layers, 
-  DollarSign, 
-  Bed, 
-  Search, 
+import {
+  Building,
+  MapPin,
+  Home,
+  Layers,
+  DollarSign,
+  Bed,
+  Search,
   RotateCcw,
   SlidersHorizontal,
-  X
+  X,
 } from "lucide-react";
 
 export default function FilterBar({
@@ -24,7 +24,7 @@ export default function FilterBar({
   priceRanges = [],
   bedsList = [],
   onSearch,
-  totalResults = 0
+  totalResults = 0,
 }) {
   const [activeTab, setActiveTab] = useState(null);
 
@@ -52,13 +52,17 @@ export default function FilterBar({
   return (
     <div className="w-full border-y border-[#d4af37]/25 bg-[#1a1a1a] py-6 shadow-xl">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        
         {/* Top Quick Filters Tabs */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-100">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <button
               type="button"
-              onClick={() => handleFilterChange("developer", filters.developer ? "" : developers[0]?.slug || "")}
+              onClick={() =>
+                handleFilterChange(
+                  "developer",
+                  filters.developer ? "" : developers[0]?.slug || "",
+                )
+              }
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs uppercase tracking-wider rounded-sm transition-all ${
                 filters.developer
                   ? "bg-[#c5a880] text-neutral-950 font-bold shadow-sm"
@@ -71,7 +75,12 @@ export default function FilterBar({
 
             <button
               type="button"
-              onClick={() => handleFilterChange("type", filters.type ? "" : types[0]?.slug || "")}
+              onClick={() =>
+                handleFilterChange(
+                  "type",
+                  filters.type ? "" : types[0]?.slug || "",
+                )
+              }
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs uppercase tracking-wider rounded-sm transition-all ${
                 filters.type
                   ? "bg-[#c5a880] text-neutral-950 font-bold shadow-sm"
@@ -84,7 +93,12 @@ export default function FilterBar({
 
             <button
               type="button"
-              onClick={() => handleFilterChange("status", filters.status ? "" : statuses[0]?.slug || "")}
+              onClick={() =>
+                handleFilterChange(
+                  "status",
+                  filters.status ? "" : statuses[0]?.slug || "",
+                )
+              }
               className={`flex items-center gap-2 px-3.5 py-1.5 text-xs uppercase tracking-wider rounded-sm transition-all ${
                 filters.status
                   ? "bg-[#c5a880] text-neutral-950 font-bold shadow-sm"
@@ -97,7 +111,13 @@ export default function FilterBar({
           </div>
 
           <div className="flex items-center gap-3 text-xs text-stone-400">
-            <span>Showing <strong className="font-bold text-[#d4af37]">{totalResults}</strong> luxury developments</span>
+            <span>
+              Showing{" "}
+              <strong className="font-bold text-[#d4af37]">
+                {totalResults}
+              </strong>{" "}
+              luxury developments
+            </span>
             {hasActiveFilters && (
               <button
                 onClick={clearAllFilters}
@@ -112,7 +132,6 @@ export default function FilterBar({
 
         {/* Main 6 Filter Dropdowns matching page-projects.php */}
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3">
-          
           {/* 1. Builder / Developer */}
           <div className="flex items-center gap-2 border border-neutral-200 bg-white px-3 py-2.5 rounded-sm focus-within:border-[#c5a880]">
             <Building className="h-4 w-4 text-stone-400 shrink-0" />
@@ -236,13 +255,14 @@ export default function FilterBar({
               </button>
             )}
           </div>
-
         </div>
 
         {/* Active Filter Pills */}
         {hasActiveFilters && (
           <div className="mt-3.5 flex flex-wrap items-center gap-2 pt-2 text-xs">
-            <span className="text-stone-400 text-[11px] uppercase tracking-wider">Active:</span>
+            <span className="text-stone-400 text-[11px] uppercase tracking-wider">
+              Active:
+            </span>
             {Object.entries(filters).map(([k, v]) => {
               if (!v) return null;
               return (
@@ -250,7 +270,9 @@ export default function FilterBar({
                   key={k}
                   className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 border border-stone-200 px-2.5 py-0.5 text-[11px] text-stone-800"
                 >
-                  <span className="capitalize">{k}: <strong>{v}</strong></span>
+                  <span className="capitalize">
+                    {k}: <strong>{v}</strong>
+                  </span>
                   <button
                     onClick={() => handleFilterChange(k, "")}
                     className="hover:text-red-600"
@@ -262,7 +284,6 @@ export default function FilterBar({
             })}
           </div>
         )}
-
       </div>
     </div>
   );

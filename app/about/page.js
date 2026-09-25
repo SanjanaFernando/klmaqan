@@ -1,25 +1,51 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, Award, ShieldCheck, Globe, Users, ArrowRight, Sparkles } from "lucide-react";
+import {
+  Building2,
+  Award,
+  ShieldCheck,
+  Globe,
+  Users,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
 
 export const metadata = {
   title: "About KL MAQAN | Dubai Luxury Real Estate Advisory",
-  description: "Learn about KL MAQAN, Dubai's premier real estate consultancy. Delivering unparalleled market insights, developer allocations, and bespoke investor services.",
+  description:
+    "Learn about KL MAQAN, Dubai's premier real estate consultancy. Delivering unparalleled market insights, developer allocations, and bespoke investor services.",
 };
 
 export default function AboutPage() {
   const masterDevelopers = [
-    { name: "Emaar Properties", desc: "Creator of Downtown Dubai, Burj Khalifa & Dubai Hills." },
-    { name: "Nakheel", desc: "Pioneers of Palm Jumeirah & Dubai Islands waterfronts." },
-    { name: "Meraas", desc: "Design-led prime urban destinations including City Walk & Bluewaters." },
-    { name: "Damac Properties", desc: "Luxury lifestyle master-communities & branded residences." },
-    { name: "Sobha Realty", desc: "Signature craftsmanship & backward-integrated luxury construction." },
-    { name: "Omniyat", desc: "Ultra-luxury architectural landmarks designed by Zaha Hadid." },
+    {
+      name: "Emaar Properties",
+      desc: "Creator of Downtown Dubai, Burj Khalifa & Dubai Hills.",
+    },
+    {
+      name: "Nakheel",
+      desc: "Pioneers of Palm Jumeirah & Dubai Islands waterfronts.",
+    },
+    {
+      name: "Meraas",
+      desc: "Design-led prime urban destinations including City Walk & Bluewaters.",
+    },
+    {
+      name: "Damac Properties",
+      desc: "Luxury lifestyle master-communities & branded residences.",
+    },
+    {
+      name: "Sobha Realty",
+      desc: "Signature craftsmanship & backward-integrated luxury construction.",
+    },
+    {
+      name: "Omniyat",
+      desc: "Ultra-luxury architectural landmarks designed by Zaha Hadid.",
+    },
   ];
 
   return (
     <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
-      
       {/* 1. HERO BANNER */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">
         <Image
@@ -40,7 +66,9 @@ export default function AboutPage() {
             <span className="gold-gradient-text">Advisory in Dubai</span>
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-300 font-light">
-            Bridging international capital with premier Middle Eastern real estate through deep local intelligence, discreet advisory, and priority developer relationships.
+            Bridging international capital with premier Middle Eastern real
+            estate through deep local intelligence, discreet advisory, and
+            priority developer relationships.
           </p>
         </div>
       </section>
@@ -56,20 +84,34 @@ export default function AboutPage() {
               A Legacy Built on Discretion, Trust & Exceptional Returns
             </h2>
             <p className="text-sm leading-relaxed text-stone-700 font-light">
-              KL MAQAN was established to provide an elevated standard of real estate advisory for international private clients, family offices, and institutional investors seeking exposure to Dubai’s hyper-growth market.
+              KL MAQAN was established to provide an elevated standard of real
+              estate advisory for international private clients, family offices,
+              and institutional investors seeking exposure to Dubai’s
+              hyper-growth market.
             </p>
             <p className="text-sm leading-relaxed text-stone-700 font-light">
-              With decades of collective experience, our advisory team offers unparalleled insider access to tier-one developer allocations before they hit the open market, ensuring our clients capitalize on prime capital growth and optimal payment flexibility.
+              With decades of collective experience, our advisory team offers
+              unparalleled insider access to tier-one developer allocations
+              before they hit the open market, ensuring our clients capitalize
+              on prime capital growth and optimal payment flexibility.
             </p>
 
             <div className="grid grid-cols-2 gap-6 border-t border-neutral-200 pt-6">
               <div>
-                <div className="font-serif-luxury text-3xl font-bold text-[#9f8052]">AED 4.2B+</div>
-                <div className="text-xs text-stone-500 uppercase tracking-wider mt-1">Transacted Volume</div>
+                <div className="font-serif-luxury text-3xl font-bold text-[#9f8052]">
+                  AED 4.2B+
+                </div>
+                <div className="text-xs text-stone-500 uppercase tracking-wider mt-1">
+                  Transacted Volume
+                </div>
               </div>
               <div>
-                <div className="font-serif-luxury text-3xl font-bold text-[#9f8052]">45+</div>
-                <div className="text-xs text-stone-500 uppercase tracking-wider mt-1">Nationalities Served</div>
+                <div className="font-serif-luxury text-3xl font-bold text-[#9f8052]">
+                  45+
+                </div>
+                <div className="text-xs text-stone-500 uppercase tracking-wider mt-1">
+                  Nationalities Served
+                </div>
               </div>
             </div>
           </div>
@@ -96,20 +138,29 @@ export default function AboutPage() {
               Direct Tier-1 Master Developers
             </h2>
             <p className="mt-3 text-sm text-stone-600">
-              We partner directly with the UAE’s most established master developers to guarantee legitimate escrow compliance and zero buyer commission.
+              We partner directly with the UAE’s most established master
+              developers to guarantee legitimate escrow compliance and zero
+              buyer commission.
             </p>
           </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {masterDevelopers.map((dev, i) => (
-              <div key={i} className="rounded-md bg-white p-6 border border-neutral-200/80 shadow-sm">
+              <div
+                key={i}
+                className="rounded-md bg-white p-6 border border-neutral-200/80 shadow-sm"
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-neutral-900 text-[#dfc498]">
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-base">{dev.name}</h3>
-                    <span className="text-[10px] uppercase tracking-wider text-[#9f8052]">Accredited Partner</span>
+                    <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-base">
+                      {dev.name}
+                    </h3>
+                    <span className="text-[10px] uppercase tracking-wider text-[#9f8052]">
+                      Accredited Partner
+                    </span>
                   </div>
                 </div>
                 <p className="mt-3 text-xs text-stone-600 leading-relaxed">
@@ -120,7 +171,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

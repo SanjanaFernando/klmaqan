@@ -1,22 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Building2, 
-  Key, 
-  ShieldCheck, 
-  TrendingUp, 
-  Globe2, 
-  CheckCircle2, 
+import {
+  Building2,
+  Key,
+  ShieldCheck,
+  TrendingUp,
+  Globe2,
+  CheckCircle2,
   ArrowRight,
   Sparkles,
   Users,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 import { getServices } from "@/lib/wp";
 
 export const metadata = {
   title: "Real Estate Services & Wealth Advisory | KL MAQAN",
-  description: "Comprehensive luxury property advisory in Dubai: Off-plan allocations, trophy residential acquisitions, UAE Golden Visa processing, and asset management.",
+  description:
+    "Comprehensive luxury property advisory in Dubai: Off-plan allocations, trophy residential acquisitions, UAE Golden Visa processing, and asset management.",
 };
 
 export default async function ServicesPage() {
@@ -31,7 +32,6 @@ export default async function ServicesPage() {
 
   return (
     <div className="luxury-page w-full bg-[#faf9f6] min-h-screen">
-      
       {/* 1. HERO BANNER */}
       <section className="relative flex min-h-[420px] w-full flex-col justify-center overflow-hidden pt-36 pb-20 bg-neutral-950 text-white">
         <Image
@@ -52,7 +52,9 @@ export default async function ServicesPage() {
             <span className="gold-gradient-text">Investment Services</span>
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-300 font-light">
-            Guiding high-net-worth individuals and international investment funds through seamless acquisitions, legal structuring, and asset optimization in Dubai.
+            Guiding high-net-worth individuals and international investment
+            funds through seamless acquisitions, legal structuring, and asset
+            optimization in Dubai.
           </p>
         </div>
       </section>
@@ -61,8 +63,14 @@ export default async function ServicesPage() {
       <section className="mx-auto max-w-7xl px-5 sm:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, idx) => {
-            const title = typeof service.title === "object" ? service.title.rendered : service.title;
-            const content = typeof service.content === "object" ? service.content.rendered : service.content;
+            const title =
+              typeof service.title === "object"
+                ? service.title.rendered
+                : service.title;
+            const content =
+              typeof service.content === "object"
+                ? service.content.rendered
+                : service.content;
 
             return (
               <div
@@ -78,7 +86,7 @@ export default async function ServicesPage() {
                     {title}
                   </h2>
 
-                  <div 
+                  <div
                     className="mt-4 text-sm leading-relaxed text-stone-600 font-light"
                     dangerouslySetInnerHTML={{ __html: content }}
                   />
@@ -125,16 +133,26 @@ export default async function ServicesPage() {
               UAE 10-Year Golden Visa Concierge
             </h2>
             <p className="text-sm text-stone-300 leading-relaxed font-light">
-              Foreign investors purchasing real estate with a combined value of AED 2 Million (approx. USD $545,000) or above qualify for a 10-year renewable residency visa.
+              Foreign investors purchasing real estate with a combined value of
+              AED 2 Million (approx. USD $545,000) or above qualify for a
+              10-year renewable residency visa.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="rounded-sm bg-neutral-900 border border-neutral-800 p-4">
-                <div className="font-serif-luxury text-xl font-bold text-[#dfc498]">100% Family Coverage</div>
-                <div className="text-xs text-stone-400 mt-1">Includes spouse, children of any age, and domestic staff.</div>
+                <div className="font-serif-luxury text-xl font-bold text-[#dfc498]">
+                  100% Family Coverage
+                </div>
+                <div className="text-xs text-stone-400 mt-1">
+                  Includes spouse, children of any age, and domestic staff.
+                </div>
               </div>
               <div className="rounded-sm bg-neutral-900 border border-neutral-800 p-4">
-                <div className="font-serif-luxury text-xl font-bold text-[#dfc498]">No Stay Requirement</div>
-                <div className="text-xs text-stone-400 mt-1">Remain abroad indefinitely without risking visa cancellation.</div>
+                <div className="font-serif-luxury text-xl font-bold text-[#dfc498]">
+                  No Stay Requirement
+                </div>
+                <div className="text-xs text-stone-400 mt-1">
+                  Remain abroad indefinitely without risking visa cancellation.
+                </div>
               </div>
             </div>
             <Link
@@ -155,13 +173,16 @@ export default async function ServicesPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="font-serif-luxury text-xl font-bold uppercase text-white">Live & Invest in Dubai</div>
-              <div className="text-xs text-stone-300 mt-1">World’s safest and most dynamic business metropolis.</div>
+              <div className="font-serif-luxury text-xl font-bold uppercase text-white">
+                Live & Invest in Dubai
+              </div>
+              <div className="text-xs text-stone-300 mt-1">
+                World’s safest and most dynamic business metropolis.
+              </div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

@@ -2,35 +2,49 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Bed, Bath, Maximize2, MapPin, Calendar, ArrowRight, Building, Sparkles } from "lucide-react";
+import {
+  Bed,
+  Bath,
+  Maximize2,
+  MapPin,
+  Calendar,
+  ArrowRight,
+  Building,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 
 export default function ProjectCard({ project, priority = false }) {
   const [imgSrc, setImgSrc] = useState(
     project.featured_image ||
-    project.featured_image_medium ||
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+      project.featured_image_medium ||
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   );
 
-  const title = project.title?.rendered?.replace(/&#8217;/g, "'") || "Exclusive Property";
+  const title =
+    project.title?.rendered?.replace(/&#8217;/g, "'") || "Exclusive Property";
   const slug = project.slug || `project-${project.id}`;
 
   const address = project.acf?.property_address || "Dubai Prime Location";
   const price = project.acf?.property_price || "Price On Application";
-  const beds = project.acf?.bedrooms || project.project_taxonomies?.beds?.[0]?.name || "3";
+  const beds =
+    project.acf?.bedrooms || project.project_taxonomies?.beds?.[0]?.name || "3";
   const baths = project.acf?.bathrooms || "3";
   const area = project.acf?.area_from || "1,800 Sq Ft";
   const handover = project.acf?.handover || "Q4 2026";
   const paymentPlan = project.acf?.payment_plan || "Flexible Payment";
 
-  const developer = project.project_taxonomies?.['property-developer']?.[0]?.name || "Emaar";
+  const developer =
+    project.project_taxonomies?.["property-developer"]?.[0]?.name || "Emaar";
   const location = project.project_taxonomies?.location?.[0]?.name || "Dubai";
-  const status = project.project_taxonomies?.['property-status']?.[0]?.name || "Off-Plan";
-  const type = project.project_taxonomies?.['property-type']?.[0]?.name || "Luxury Residence";
+  const status =
+    project.project_taxonomies?.["property-status"]?.[0]?.name || "Off-Plan";
+  const type =
+    project.project_taxonomies?.["property-type"]?.[0]?.name ||
+    "Luxury Residence";
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-none border border-neutral-200/80 bg-white transition-all duration-500 hover:-translate-y-1.5 hover:border-[#d4af37]/60 hover:shadow-2xl hover:shadow-[#9f8052]/15">
-      
       {/* Property Thumbnail Image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
         <Image
@@ -39,10 +53,14 @@ export default function ProjectCard({ project, priority = false }) {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
-          onError={() => setImgSrc("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80")}
+          onError={() =>
+            setImgSrc(
+              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+            )
+          }
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        
+
         {/* Subtle Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -61,7 +79,9 @@ export default function ProjectCard({ project, priority = false }) {
         {/* Bottom Image Info */}
         <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between text-white">
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-stone-300">Starting From</span>
+            <span className="text-[10px] uppercase tracking-widest text-stone-300">
+              Starting From
+            </span>
             <div className="font-serif-luxury text-lg sm:text-xl font-bold text-[#dfc498] drop-shadow-sm">
               {price}
             </div>
@@ -74,7 +94,6 @@ export default function ProjectCard({ project, priority = false }) {
 
       {/* Card Details */}
       <div className="flex flex-1 flex-col border-t-2 border-[#d4af37]/35 p-5">
-        
         {/* Location & Title */}
         <div className="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
           <MapPin className="h-3.5 w-3.5 text-[#c5a880] shrink-0" />
@@ -82,9 +101,7 @@ export default function ProjectCard({ project, priority = false }) {
         </div>
 
         <h3 className="mt-1.5 font-serif-luxury text-lg font-bold uppercase text-neutral-900 group-hover:text-[#9f8052] transition-colors line-clamp-1">
-          <Link href={`/projects/${slug}`}>
-            {title}
-          </Link>
+          <Link href={`/projects/${slug}`}>{title}</Link>
         </h3>
 
         {/* Specs Grid */}
@@ -124,9 +141,7 @@ export default function ProjectCard({ project, priority = false }) {
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
-
       </div>
-
     </div>
   );
 }
