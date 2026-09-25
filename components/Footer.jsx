@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Building2,
   Mail,
   Phone,
   MapPin,
@@ -42,12 +42,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-[#dfc498] via-[#c5a880] to-[#9f8052] text-neutral-950">
-                <Building2 className="h-5 w-5 stroke-[2.2]" />
-              </div>
+            <Link href="/" className="group flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="KL MAQAN"
+                width={44}
+                height={44}
+                className="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
               <div className="flex flex-col">
-                <span className="font-serif-luxury text-xl font-bold tracking-[0.2em] text-white uppercase">
+                <span className="font-serif-luxury text-xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-[#dfc498] transition-colors">
                   KL MAQAN
                 </span>
                 <span className="text-[9px] tracking-[0.35em] text-stone-400 uppercase -mt-1">

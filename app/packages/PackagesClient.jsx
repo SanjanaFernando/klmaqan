@@ -8,7 +8,6 @@ import {
   Sparkles,
   Check,
   ArrowRight,
-  Building2,
   Phone,
   Mail,
   Layers,
@@ -296,8 +295,14 @@ export default function PackagesClient({ packages = [] }) {
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="rounded-md bg-white p-6 border border-neutral-200 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-neutral-900 text-[#dfc498]">
-                <Building2 className="h-5 w-5" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-neutral-900 p-1.5">
+                <Image
+                  src="/logo.png"
+                  alt="KL MAQAN"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain"
+                />
               </div>
               <h3 className="mt-4 font-serif-luxury font-bold uppercase text-neutral-900 text-base">
                 Direct Tier-1 Access

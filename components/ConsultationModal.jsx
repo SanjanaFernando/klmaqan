@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Sparkles, CheckCircle2, Phone, Mail, User, Building, MessageSquare } from "lucide-react";
+import { X, Sparkles, CheckCircle2, Phone, Mail, User, MessageSquare } from "lucide-react";
 
 export default function ConsultationModal({ isOpen, onClose, projectTitle = "" }) {
   const [formData, setFormData] = useState({

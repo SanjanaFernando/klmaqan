@@ -9,7 +9,6 @@ import {
   MapPin,
   Calendar,
   ArrowRight,
-  Building,
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
@@ -69,7 +68,13 @@ export default function ProjectCard({ project, priority = false }) {
         {/* Top Badges */}
         <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
           <div className="flex items-center gap-1.5 rounded-sm bg-black/60 backdrop-blur-md px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#dfc498] border border-[#c5a880]/30">
-            <Building className="h-3 w-3" />
+            <Image
+              src="/logo.png"
+              alt="KL MAQAN"
+              width={14}
+              height={14}
+              className="h-3.5 w-3.5 object-contain"
+            />
             <span>{developer}</span>
           </div>
 

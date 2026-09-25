@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
-  Building,
   MapPin,
   Home,
   Layers,
@@ -69,7 +69,13 @@ export default function FilterBar({
                   : "border border-neutral-200 bg-neutral-50 text-neutral-700 hover:bg-neutral-100"
               }`}
             >
-              <Building className="h-3.5 w-3.5" />
+              <Image
+                src="/logo.png"
+                alt="KL MAQAN"
+                width={14}
+                height={14}
+                className="h-3.5 w-3.5 object-contain"
+              />
               <span>By Builder</span>
             </button>
 
@@ -134,7 +140,13 @@ export default function FilterBar({
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3">
           {/* 1. Builder / Developer */}
           <div className="flex items-center gap-2 border border-neutral-200 bg-white px-3 py-2.5 rounded-sm focus-within:border-[#c5a880]">
-            <Building className="h-4 w-4 text-stone-400 shrink-0" />
+            <Image
+              src="/logo.png"
+              alt="KL MAQAN"
+              width={16}
+              height={16}
+              className="h-4 w-4 object-contain opacity-70 shrink-0"
+            />
             <select
               value={filters.developer}
               onChange={(e) => handleFilterChange("developer", e.target.value)}

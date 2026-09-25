@@ -7,7 +7,6 @@ import {
   List,
   SlidersHorizontal,
   Sparkles,
-  Building2,
   MapPin,
 } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
@@ -227,8 +226,14 @@ export default function ProjectsClient({
         {/* Property Results */}
         {filteredProjects.length === 0 ? (
           <div className="my-16 rounded-md border border-dashed border-neutral-300 bg-white p-12 text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-stone-100 text-stone-400">
-              <Building2 className="h-6 w-6" />
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-stone-100 p-2">
+              <Image
+                src="/logo.png"
+                alt="KL MAQAN"
+                width={36}
+                height={36}
+                className="h-9 w-9 object-contain opacity-70"
+              />
             </div>
             <h3 className="mt-4 font-serif-luxury text-lg uppercase text-neutral-900">
               No Properties Found

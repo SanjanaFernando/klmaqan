@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
-  Building2,
   MapPin,
   Phone,
   Mail,

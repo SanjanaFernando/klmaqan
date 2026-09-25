@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Building2,
   Award,
   ShieldCheck,
   Globe,
@@ -151,8 +150,14 @@ export default function AboutPage() {
                 className="rounded-md bg-white p-6 border border-neutral-200/80 shadow-sm"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-neutral-900 text-[#dfc498]">
-                    <Building2 className="h-5 w-5" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-neutral-900 p-1.5">
+                    <Image
+                      src="/logo.png"
+                      alt="KL MAQAN"
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="font-serif-luxury font-bold uppercase text-neutral-900 text-base">

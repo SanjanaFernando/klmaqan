@@ -8,7 +8,6 @@ import {
   Sparkles,
   Check,
   ArrowRight,
-  Building2,
   Phone,
   Mail,
   Clock,

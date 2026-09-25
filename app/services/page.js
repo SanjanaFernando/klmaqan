@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Building2,
   Key,
   ShieldCheck,
   TrendingUp,
@@ -27,7 +26,7 @@ export default async function ServicesPage() {
     <TrendingUp key="1" className="h-7 w-7" />,
     <Key key="2" className="h-7 w-7" />,
     <ShieldCheck key="3" className="h-7 w-7" />,
-    <Building2 key="4" className="h-7 w-7" />,
+    <Image key="4" src="/logo.png" alt="KL MAQAN" width={28} height={28} className="h-7 w-7 object-contain" />,
   ];
 
   return (
