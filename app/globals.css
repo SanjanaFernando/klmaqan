@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-gold: #c5a880;
+    --brand-gold-light: #e6d5b8;
+    --brand-gold-dark: #9f8052;
+    --brand-dark: #121212;
+    --brand-dark-surface: #1a1a1a;
+    --brand-stone: #242424;
+    --brand-accent: #d4af37;
+  }
+
+  body {
+    background-color: #faf9f6;
+    color: #171717;
+    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: var(--font-heading), Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Glassmorphism & Luxury Glow */
+.glass-nav {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #dfc498 0%, #c5a880 50%, #9f8052 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #dfc498 0%, #c5a880 50%, #9f8052 100%);
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(197, 168, 128, 0.35);
+  border-color: #c5a880;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
