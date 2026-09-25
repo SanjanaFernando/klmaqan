@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { decodeHtmlEntities } from "@/lib/text";
 import {
   ArrowUpRight,
   ChevronDown,
@@ -46,9 +47,11 @@ const reveal = {
 };
 
 function titleOf(item, fallback) {
-  return typeof item?.title === "object"
-    ? item.title?.rendered
-    : item?.title || fallback;
+  const title =
+    typeof item?.title === "object"
+      ? item.title?.rendered
+      : item?.title || fallback;
+  return decodeHtmlEntities(title || fallback);
 }
 
 function imageOf(project) {

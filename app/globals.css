@@ -94,13 +94,9 @@
 }
 
 .luxury-page {
-  background-image:
-    radial-gradient(
-      circle at 12% 8%,
-      rgba(212, 175, 55, 0.08),
-      transparent 24rem
-    ),
-    linear-gradient(180deg, #faf9f6 0%, #f5f0e8 100%);
+  background-color: var(--brand-dark);
+  background-image: radial-gradient(circle at 12% 8%, rgba(212, 175, 55, 0.1), transparent 24rem), linear-gradient(180deg, #0b0b0b 0%, #111111 100%);
+  color: #f5f5f7;
 }
 
 .luxury-page section:first-child {
@@ -111,14 +107,69 @@
   letter-spacing: -0.02em;
 }
 
-.luxury-page section .bg-white {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(170, 124, 17, 0.18);
-  box-shadow: 0 18px 50px rgba(11, 11, 11, 0.06);
+.luxury-page section:not(:first-child) {
+  background-color: transparent;
 }
 
-.luxury-page section .bg-white:hover {
+.luxury-page .bg-white,
+.luxury-page .bg-stone-50,
+.luxury-page .bg-stone-100,
+.luxury-page .bg-neutral-50,
+.luxury-page .bg-neutral-100 {
+  background: rgba(26, 26, 26, 0.92);
+  color: #f5f5f7;
+  border-color: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.luxury-page .bg-white:hover,
+.luxury-page .bg-stone-50:hover,
+.luxury-page .bg-stone-100:hover {
   border-color: rgba(212, 175, 55, 0.55);
+}
+
+.luxury-page .text-neutral-900,
+.luxury-page .text-neutral-800,
+.luxury-page .text-neutral-700,
+.luxury-page .text-stone-800,
+.luxury-page .text-stone-700,
+.luxury-page .text-stone-600,
+.luxury-page .text-stone-500 {
+  color: rgba(245, 245, 247, 0.72);
+}
+
+.luxury-page h1.text-neutral-900,
+.luxury-page h2.text-neutral-900,
+.luxury-page h3.text-neutral-900,
+.luxury-page h4.text-neutral-900,
+.luxury-page .font-serif-luxury.text-neutral-900 {
+  color: #f5f5f7;
+}
+
+.luxury-page .border-neutral-200,
+.luxury-page .border-neutral-300,
+.luxury-page .border-stone-200,
+.luxury-page .border-stone-300,
+.luxury-page .border-neutral-100 {
+  border-color: rgba(245, 245, 247, 0.14);
+}
+
+.luxury-page input,
+.luxury-page select,
+.luxury-page textarea {
+  background-color: #1a1a1a;
+  color: #f5f5f7;
+  border-color: rgba(245, 245, 247, 0.2);
+}
+
+.luxury-page select option {
+  background: #1a1a1a;
+  color: #f5f5f7;
+}
+
+.luxury-page .bg-gradient-to-t,
+.luxury-page .bg-gradient-to-r {
+  color: #f5f5f7;
 }
 
 /* ─── Gold Gradients ────────────────────────────────────── */

@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import { decodeHtmlEntities } from "@/lib/text";
 
 export default function ProjectCard({ project, priority = false }) {
   const [imgSrc, setImgSrc] = useState(
@@ -21,8 +22,9 @@ export default function ProjectCard({ project, priority = false }) {
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   );
 
-  const title =
-    project.title?.rendered?.replace(/&#8217;/g, "'") || "Exclusive Property";
+  const title = decodeHtmlEntities(
+    project.title?.rendered || "Exclusive Property",
+  );
   const slug = project.slug || `project-${project.id}`;
 
   const address = project.acf?.property_address || "Dubai Prime Location";
