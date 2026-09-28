@@ -1,5 +1,8 @@
-import { getProjects, getTaxonomyTerms } from "@/lib/wp";
+import { getProjects } from "@/lib/graphql";
+import { getTaxonomyTerms } from "@/lib/wp";
 import ProjectsClient from "./ProjectsClient";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Explore Dubai Real Estate Projects | KL MAQAN",

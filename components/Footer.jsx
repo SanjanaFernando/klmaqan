@@ -127,6 +127,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/loans"
+                  className="hover:text-[#c5a880] transition-colors"
+                >
+                  Property Loans & Financing
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services"
                   className="hover:text-[#c5a880] transition-colors"
                 >

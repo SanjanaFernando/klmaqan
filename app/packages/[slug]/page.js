@@ -1,4 +1,4 @@
-import { getPackageBySlug, getPackages } from "@/lib/wp";
+import { getPackageBySlug } from "@/lib/graphql";
 import SinglePackageClient from "./SinglePackageClient";
 import { notFound } from "next/navigation";
 

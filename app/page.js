@@ -1,5 +1,8 @@
-import { getProjects, getServices, getTestimonials } from "@/lib/wp";
+import { getProjects } from "@/lib/graphql";
+import { getServices, getTestimonials } from "@/lib/wp";
 import HomeClient from "@/components/HomeClient";
+
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const [projects, services, testimonials] = await Promise.all([

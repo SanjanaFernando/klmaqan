@@ -1,4 +1,4 @@
-import { getPackages } from "@/lib/wp";
+import { getPackages } from "@/lib/graphql";
 import PackagesClient from "./PackagesClient";
 
 // Always fetch fresh from WordPress — no static/ISR caching

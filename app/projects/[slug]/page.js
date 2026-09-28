@@ -1,4 +1,4 @@
-import { getProjectBySlug, getProjects } from "@/lib/wp";
+import { getProjectBySlug, getProjects } from "@/lib/graphql";
 import SingleProjectClient from "./SingleProjectClient";
 import { notFound } from "next/navigation";
 
